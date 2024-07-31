@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cycle Wheels</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section>
+        <div class="main_container" id="mainId">
+            <div class="checkout_container" id="checkId">
+                <h3>Checkout Done</h3>
+                <div class="button_container">
+                    <button type="button">Buy Now</button>
+                    <button type="button" onclick="backToProduct()">Back</button>
+                </div>
+            </div>
+            <div class="cycle_image_container" id="cycleId">
+                <span id="wheelId1" class="wheel1_1"></span>
+                <span id="wheelId2" class="wheel1_2"></span>
+                <button type="button" id="checkoutId" class="checkoutbtn" onclick="checkoutProduct()">Checkout</button>
+            </div>
+            <div class="wheels_container" id="detailsId">
+                <h2 class="cycle_header">Configure the Bike</h2>
+                <div>
+                    <h3 class="wheels_card_head">Wheels</h3>
+                    <div class="all_wheels" id="wheelcardsId">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>

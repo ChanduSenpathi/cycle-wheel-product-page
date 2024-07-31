@@ -1,0 +1,239 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.main_container {
+    height: 100vh;
+    background-image: linear-gradient(to right, rgb(112, 169, 220) 30%, white 30%);
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.cycle_image_container {
+    position: relative;
+    height: 300px;
+    width: 300px; 
+    left: 0;
+    transition: all 3s;
+}
+.cycle_image_container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/cycle.png'); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1;
+}
+
+.cycle_image_container.cycle_pos {
+    left: 25%;
+}
+
+.cycle_image_container.cycle_anim::before {
+    animation: cycle 2s linear 1 forwards;
+}
+
+.rotate {
+    animation: rotate1 2s linear forwards !important;
+}
+
+@keyframes rotate1 {
+    from {
+        transform:  rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes cycle {
+    0% {
+        top: 0%;
+    }
+    50% {
+        top: -10%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+.wheel1_1, .wheel1_2 {
+    position: absolute;
+    width: 60%; 
+    height: 60%; 
+    top: 49%;
+    left: -27%; 
+    background-image: url('./images/wheel1.png'); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0; 
+    animation: wheel1_1 1.5s linear 1 forwards;
+}
+.wheel1_2 {
+    left: 70%; 
+    background-image: url('./images/wheel1.png'); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 0; 
+    animation: wheel1_2 1.5s linear 1 forwards;
+}
+
+.checkoutbtn {
+    position: absolute;
+    left: 20%;
+    bottom: -25%;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(247, 84, 84);
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@keyframes wheel1_1 {
+    from {
+        left: -500%;
+        transform: rotate(0deg);
+    }
+    to {
+        left: -27%;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes wheel1_2 {
+    from {
+        left: 500%;
+        transform: rotate(0deg);
+    }
+    to {
+        left: 70%;
+        transform: rotate(-360deg);
+    }
+}
+
+.wheel1_1_wrapper {
+    animation: wrapper1 .5s linear 1 forwards;
+}
+
+.wheel1_2_wrapper {
+    animation: wrapper2 .5s linear 1 forwards;
+}
+
+@keyframes wrapper1 {
+    0% {
+        left: -27%;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: -500%;
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes wrapper2 {
+    0% {
+        left: 70%;
+        transform: rotate(0deg);
+    }
+    100% {
+        left: 500%;
+        transform: rotate(360deg);
+    }
+}
+
+.sub_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    margin: 10px;
+    width: 100%;
+}
+.wheels_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 400px;
+}
+.wheels_card_head {
+    margin-bottom: 20px;
+}
+.cycle_header {
+    font-size: 30px;
+}
+.all_wheels {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+.wheels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px grey solid;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+}
+.all_wheels > a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.all_wheels > a:hover {
+    transform: scale(1.1);
+    transition: all .5s;
+}
+.wheels > span {
+    font-size: 15px;
+}
+.cards_wheels {
+    width: 100%;
+    height: 100%;
+}
+
+.checkout_container {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+.button_container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.checkout_container > h3 {
+    font-size: 30px;
+}
+
+.button_container > button:first-child, .button_container > button:last-child {
+    flex: 1 0 100px;
+    padding: 10px 15px;
+    background-color: rgb(238, 78, 78);
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main_bg {
+    background-image: linear-gradient(to left, rgb(112, 169, 220) 30%, white 30%);
+}
